@@ -1,64 +1,94 @@
 * {
   margin: 0;
- font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #333;
 }
-
-.navbar {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  min-width: fit-content;
-  margin: 0 auto;
-  background-color: #424;
-  border-bottom: 1px solid #f2f2f2;
+.container {
+  max-width: 300px;
+  margin: 60px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid steelblue;
+  padding: 60px;
+  padding-bottom: 5px;
+  border-radius: 5px;
 }
 
-.navbar h1 {
-  color: #f1356d;
+.container h1 {
+  text-align: center;
   font-size: 30px;
+  padding-bottom: 10px;
+  color: rgb(255, 94, 0);
 }
 
-.navbar .link {
-  margin-left: auto;
+.add-form {
+  margin-bottom: 40px;
 }
 
-.navbar a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 6px;
-  color: #ffff;
+.form-control {
+  margin: 10px 0px;
 }
 
-.navbar a:hover {
-  color: #f1356d;
+.form-control label {
+  display: block;
+  flex: 3;
+}
+.form-control h4 {
+  padding-bottom: 10px;
 }
 
-.content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
+.form-control input {
+  width: 90%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 3px;
+  font-size: 17px;
 }
 
-.blog-preview {
-  padding: 10px 16px;
-  margin: 50px 0;
-  border-bottom: 1px solid #fff;
+.prayer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.blog-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+.dua-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
 }
 
-.blog-preview h2 {
+.total {
+  display: flex;
+  padding-top: 50px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer {
+  text-align: center;
+  font-weight: 500;
   font-size: 25px;
-  color: #f1356d;
-  margin-bottom: 5px;
 }
 
-.blog-preview h3 {
-  font-size: 18px;
+.counter-class {
+  display: flex;
+  justify-content: space-around;
+ 
+  }
+
+.btn-block {
+  display: block;
+  width: 100%;
+  background: rgb(85, 9, 38);
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.btn-block:hover {
+  background-color: rgb(20, 71, 16);
 }
 
 .btn {
@@ -66,72 +96,32 @@
   background-color: rgb(46, 110, 248);
   font-size: 17px;
   font-weight: 500;
+  display: block;
   padding: 7px;
-  border-radius: 5px;
+  cursor: pointer;
+  border-width: 0;
+  border-radius: 4px;
   margin-bottom: 10px;
 }
 
 .btn:hover {
-  background-color: rgb(204, 46, 99);
-  border-width: 1px solid;
+  background-color: rgb(0, 195, 255);
+  border-radius: 6px;
 }
-
-.blog-preview a {
-  text-decoration: none;
-}
-
-.blog-details h2 {
-  font-size: 30px;
-  color: #f1356d;
+.resetBtn {
+  color: #ffff;
+  background-color: rgb(46, 110, 248);
+  font-size: 17px;
+  font-weight: 500;
+  display: block;
+  padding: 7px;
+  width: 50%;
+  cursor: pointer;
+  border-width: 0;
+  border-radius: 4px;
   margin-bottom: 10px;
 }
-
-.blog-details div {
-  margin: 20px 0;
-}
-
-.blog-details button {
-  background: #130202;
-  color: #f2f2f2;
-  padding: 10px 10px;
-  font-size: 15px;
-  border: 0;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.create{
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.create label{
-  text-align: left;
-  display: block;
-}
-
-.create h2{
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 30px;
-}
-
-.create input, .create textarea, .create select{
-  width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  display: block;
-}
-
-.create button{
-  background-color: #4e3030;
-  color: #fff;
-  font-size: 16px;
-  border: 0px;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
+.resetBtn:hover {
+  background-color: rgb(0, 195, 255);
+  border-radius: 6px;
 }
