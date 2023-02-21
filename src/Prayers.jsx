@@ -1,27 +1,15 @@
 import React, { useState } from 'react';
 
-import PrayerList from './PrayerList';
-
 const Prayers = () => {
   const [prayer, setPrayer] = useState('');
+  const [prayerCount, setPrayerCount] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
-  const [counter, setCounter] = useState(0);
-  const handlePrayerCount = () => {
-    setCounter(counter + 1);
-  };
-  const [duas] = useState([
-    {
-      title: 'Ya Lateef',
-      id: 1,
-    },
-  ]);
-
-  const [count, setCount] = useState(0);
-  const handleCount = () => {
-    setCount(counter + 1);
+  const handleClick = () => {
+    const prayerCountValue = prayer;
+    setPrayerCount(prayerCountValue);
   };
 
   const [astagfirullah, setAstagfirullah] = useState(0);
@@ -44,13 +32,17 @@ const Prayers = () => {
     setAllahakbar(allahakbar + 1);
   };
 
+  const [prayerCounter, setPrayerCounter] = useState(0);
+  const handlePrayerCounter = () => {
+    setPrayerCounter(prayerCounter + 1);
+  };
+
   const reset = () => {
     setAllahakbar(0);
     setAstagfirullah(0);
     setSubhanallah(0);
     setAlhamdulilah(0);
-    setCount(0);
-    setCounter(0);
+    setPrayerCounter(0);
   };
 
   return (
@@ -71,19 +63,17 @@ const Prayers = () => {
               />
             </div>
 
-            <button type='submit' className='btn btn-block'>
+            <button
+              type='submit'
+              className='btn btn-block'
+              onClick={handleClick}
+            >
               Add
             </button>
           </form>
         </>
         <br />
-        <div className='prayer'>
-          <PrayerList duas={duas} />
-          {count}
-          <button className='btn' onClick={handleCount}>
-            Count
-          </button>
-        </div>
+
         <div className='prayer'>
           <h3>Astagfirullah</h3>
           {astagfirullah}
@@ -112,14 +102,15 @@ const Prayers = () => {
             Count
           </button>
         </div>
-
-        <div className='prayer'>
-          <h3>{prayer}</h3>
-          <div className='counter-class'>{counter}</div>
-          <button onClick={handlePrayerCount} className='btn'>
-            Count
-          </button>
-        </div>
+        {prayer && (
+          <div className='prayer'>
+            <h3>{prayerCount}</h3>
+            <div className='prayclass'>{prayerCounter}</div>
+            <button className='btn' onClick={handlePrayerCounter}>
+              Count
+            </button>
+          </div>
+        )}
 
         <div className='total'>
           Total:
@@ -127,8 +118,7 @@ const Prayers = () => {
             subhanallah +
             astagfirullah +
             allahakbar +
-            count +
-            counter}
+            prayerCounter}
           <button className='resetBtn' onClick={reset}>
             Reset
           </button>
